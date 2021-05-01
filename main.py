@@ -25,7 +25,8 @@ if "deletegz" in usercommand:
     for dirName, subdirList, fileList in os.walk(rootDir):
         for fname in fileList:
             filepath = os.path.join(dirName,fname)
-            if is_gz_file(filepath):
+            if filepath.endswith(".gz"):
                 os.remove(filepath)
                 print(f"Deleted {filepath}")
 print("Finished")
+
